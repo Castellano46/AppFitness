@@ -3,7 +3,7 @@
 Pequeña app que estoy desarrollando en mi tiempo libre con Xcode y lenguaje Swift.
 Con esta App estoy adquiriendo y poniendo en práctica nuevos conocimientos, además de asentar los ya adquiridos en el bootcamp: Desarrollo de App Móviles impartido por Keepcoding
 
-## La plantilla empieza aquí 👇
+## Empecemos 👇
 
 *En esta App podremos introducir nuestros datos como usuario en **Registro de usuario** y nos calculara nuestro IMC diciendo en que rango estamos. Además tiene la función de apuntar tus propios ejercicios en **Registrar ejercicio** para ver el progreso en cuanto a intensidad de tiempo al realizarlo y/o peso que utilizas en su ejecución.  Por otro lado veremos una ventana de ** estadísticas**  en la que se mostrará la información del usuario a lo largo del tiempo*
 
