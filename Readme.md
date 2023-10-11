@@ -7,14 +7,20 @@ Con esta App estoy adquiriendo y poniendo en práctica nuevos conocimientos, ade
 
 *En esta App podremos introducir nuestros datos como usuario en **Registro de usuario** y nos calculara nuestro IMC diciendo en que rango estamos. Además tiene la función de apuntar tus propios ejercicios en **Registrar ejercicio** para ver el progreso en cuanto a intensidad de tiempo al realizarlo y/o peso que utilizas en su ejecución.  Por otro lado veremos una ventana de ** estadísticas**  en la que se mostrará la información del usuario a lo largo del tiempo*
 
-<h1 align="center"> My Fitness App</h1>
-<p align="center"> Aquí se muestran unas imágenes de la versión más reciente de la App</p>
-<p align="center"><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/1.png"/></p> 
-<p align="center"><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/2.png"/></p> 
-<p align="center"><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/3.png"/></p> 
-<p align="center"><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/4.png"/></p> 
-<p align="center"><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/5.png"/></p> 
-<p align="center"><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/6.png"/></p> 
+<table>
+  <tr>
+    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/1.png" width="300" /></td>
+    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/2.png" width="300" /></td>
+    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/3.png" width="300" /></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/4.png" width="300" /></td>
+    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/5.png" width="300" /></td>
+    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/6.png" width="300" /></td>
+  </tr>
+</table>
 
 ## Tabla de contenidos:
 ---
