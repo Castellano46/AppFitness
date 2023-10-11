@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var exerciseStore = ExerciseStore() // Crear una instancia de ExerciseStore
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -15,7 +17,7 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .padding(.bottom, 20)
                 
-                NavigationLink(destination: ExerciseEntryView()) {
+                NavigationLink(destination: ExerciseEntryView(exerciseStore: exerciseStore)) {
                     Text("Registrar Ejercicio")
                         .foregroundColor(.white)
                         .frame(width: 200, height: 50)
@@ -41,6 +43,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("Inicio")
         }
+        .environmentObject(exerciseStore) // Inyectar el almacén de ejercicios
     }
 }
 

@@ -17,6 +17,8 @@
 		EB74485E2AD44A0300F9804A /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB74485D2AD44A0300F9804A /* ConfirmationView.swift */; };
 		EB7448602AD4547100F9804A /* ExerciseRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB74485F2AD4547100F9804A /* ExerciseRegistrationView.swift */; };
 		EB7448622AD461CA00F9804A /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7448612AD461CA00F9804A /* Exercise.swift */; };
+		EB7448682AD4998E00F9804A /* ExerciseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7448672AD4998E00F9804A /* ExerciseRowView.swift */; };
+		EB74486A2AD499AD00F9804A /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7448692AD499AD00F9804A /* ExerciseDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		EB74485D2AD44A0300F9804A /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		EB74485F2AD4547100F9804A /* ExerciseRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRegistrationView.swift; sourceTree = "<group>"; };
 		EB7448612AD461CA00F9804A /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		EB7448672AD4998E00F9804A /* ExerciseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRowView.swift; sourceTree = "<group>"; };
+		EB7448692AD499AD00F9804A /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +69,6 @@
 			children = (
 				EB7448562AD4443700F9804A /* Views */,
 				EB7448482AD4436900F9804A /* AppFitnessApp.swift */,
-				EB74484A2AD4436900F9804A /* ContentView.swift */,
 				EB74484C2AD4436A00F9804A /* Assets.xcassets */,
 				EB74484E2AD4436A00F9804A /* Preview Content */,
 			);
@@ -83,12 +86,15 @@
 		EB7448562AD4443700F9804A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EB74484A2AD4436900F9804A /* ContentView.swift */,
 				EB7448572AD4446000F9804A /* ExerciseEntryView.swift */,
 				EB7448592AD4456100F9804A /* StatisticsView.swift */,
 				EB74485B2AD4467E00F9804A /* PersonalInfoView.swift */,
 				EB74485D2AD44A0300F9804A /* ConfirmationView.swift */,
 				EB74485F2AD4547100F9804A /* ExerciseRegistrationView.swift */,
 				EB7448612AD461CA00F9804A /* Exercise.swift */,
+				EB7448672AD4998E00F9804A /* ExerciseRowView.swift */,
+				EB7448692AD499AD00F9804A /* ExerciseDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB7448682AD4998E00F9804A /* ExerciseRowView.swift in Sources */,
+				EB74486A2AD499AD00F9804A /* ExerciseDetailView.swift in Sources */,
 				EB74485C2AD4467E00F9804A /* PersonalInfoView.swift in Sources */,
 				EB7448622AD461CA00F9804A /* Exercise.swift in Sources */,
 				EB74485E2AD44A0300F9804A /* ConfirmationView.swift in Sources */,

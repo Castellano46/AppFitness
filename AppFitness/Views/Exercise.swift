@@ -9,15 +9,16 @@ import SwiftUI
 
 struct Exercise: Identifiable, Codable {
     let id = UUID()
-    let name: String
-    let duration: String
-    let weight: String
+    var name: String
+    var duration: String
+    var weight: String
 }
 
 class ExerciseStore: ObservableObject {
     @Published var exercises: [Exercise] = []
 
     init() {
+        // Cargar ejercicios guardados desde UserDefaults al inicializar
         loadExercisesFromUserDefaults()
     }
 
@@ -25,6 +26,7 @@ class ExerciseStore: ObservableObject {
         let newExercise = Exercise(name: name, duration: duration, weight: weight)
         exercises.append(newExercise)
 
+        // Guardar ejercicios en UserDefaults
         saveExercisesToUserDefaults()
     }
 
