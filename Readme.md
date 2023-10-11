@@ -9,7 +9,12 @@ Con esta App estoy adquiriendo y poniendo en práctica nuevos conocimientos, ade
 
 <h1 align="center"> My Fitness App</h1>
 <p align="center"> Aquí se muestran unas imágenes de la versión más reciente de la App</p>
-<p align="center"><img src="https://www.webdevelopersnotes.com/wp-content/uploads/create-a-simple-home-page.png"/></p> 
+<p align="center"><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/1.png"/></p> 
+<p align="center"><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/2.png"/></p> 
+<p align="center"><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/3.png"/></p> 
+<p align="center"><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/4.png"/></p> 
+<p align="center"><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/5.png"/></p> 
+<p align="center"><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/6.png"/></p> 
 
 ## Tabla de contenidos:
 ---
