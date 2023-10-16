@@ -13,7 +13,7 @@ struct ExerciseRegistrationView: View {
     @State private var exerciseName = ""
     @State private var exerciseDuration = ""
     @State private var exerciseWeight = ""
-    @State private var didLoadExercises = false // Agrega esta variable
+    @State private var didLoadExercises = false
 
     var body: some View {
         NavigationView {
