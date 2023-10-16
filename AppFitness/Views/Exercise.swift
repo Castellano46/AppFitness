@@ -18,15 +18,12 @@ class ExerciseStore: ObservableObject {
     @Published var exercises: [Exercise] = []
 
     init() {
-        // Cargar ejercicios guardados desde UserDefaults al inicializar
         loadExercisesFromUserDefaults()
     }
 
     func addExercise(name: String, duration: String, weight: String) {
         let newExercise = Exercise(name: name, duration: duration, weight: weight)
         exercises.append(newExercise)
-
-        // Guardar ejercicios en UserDefaults
         saveExercisesToUserDefaults()
     }
 

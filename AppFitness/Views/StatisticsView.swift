@@ -22,7 +22,6 @@ struct StatisticsView: View {
                 .font(.largeTitle)
                 .padding(.bottom, 20)
 
-            // Mostrar el nombre y los datos personales ingresados
             Text("Nombre: \(name)")
             Text("Altura: \(height) cm")
             Text("Peso: \(weight) kg")
@@ -49,7 +48,7 @@ struct StatisticsView: View {
                 bmiCategory = calculateBMICategory(bmi)
             }
         }
-        .navigationBarTitle("", displayMode: .inline) // Oculta el título y muestra el botón de retroceso estándar
+        .navigationBarTitle("", displayMode: .inline)
     }
 
     // Función para calcular la categoría del IMC

@@ -19,7 +19,6 @@ struct ExerciseDetailView: View {
             Text("Peso: \(exercise.weight) kg")
 
             Button(action: {
-                // Agregar lógica para eliminar el ejercicio
                 if let index = exerciseList.firstIndex(where: { $0.id == exercise.id }) {
                     exerciseList.remove(at: index)
                     presentationMode.wrappedValue.dismiss()

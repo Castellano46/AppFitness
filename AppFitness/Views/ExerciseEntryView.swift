@@ -9,18 +9,12 @@ import SwiftUI
 
 struct ExerciseEntryView: View {
     @State private var exerciseName = ""
-
-    // Utiliza @ObservedObject para inyectar el almacén de ejercicios
     @ObservedObject var exerciseStore: ExerciseStore
 
     var body: some View {
         NavigationView {
             VStack {
-                // Contenido de ExerciseEntryView
-
-                // Botón de retroceso personalizado
                 Button(action: {
-                    // Agrega aquí cualquier lógica adicional que necesites antes de navegar hacia atrás
                 }) {
                     Image(systemName: "arrow.left")
                         .padding()
@@ -32,7 +26,6 @@ struct ExerciseEntryView: View {
                     Text("Registrar Ejercicio")
                 }
 
-                // Lista de ejercicios registrados
                 List(exerciseStore.exercises) { exercise in
                     VStack(alignment: .leading) {
                         Text(exercise.name)
@@ -43,13 +36,13 @@ struct ExerciseEntryView: View {
                 }
                 .navigationBarTitle("Ejercicios Registrados")
             }
-            .navigationBarHidden(true) // Oculta la barra de navegación
+            .navigationBarHidden(true)
         }
     }
 }
 
 struct ExerciseEntryView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseEntryView(exerciseStore: ExerciseStore()) // Pasa una instancia de ExerciseStore aquí
+        ExerciseEntryView(exerciseStore: ExerciseStore()) 
     }
 }

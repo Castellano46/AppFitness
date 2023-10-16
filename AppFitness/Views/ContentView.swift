@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var exerciseStore = ExerciseStore() // Crear una instancia de ExerciseStore
+    @StateObject var exerciseStore = ExerciseStore()
     
     var body: some View {
         NavigationView {
@@ -43,7 +43,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("Inicio")
         }
-        .environmentObject(exerciseStore) // Inyectar el almacén de ejercicios
+        .environmentObject(exerciseStore) 
     }
 }
 
