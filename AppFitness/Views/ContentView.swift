@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    //@EnvironmentObject var exerciseStore: ExerciseStore
     @StateObject var exerciseStore = ExerciseStore()
     
     var body: some View {
@@ -16,39 +17,43 @@ struct ContentView: View {
                 Text("MyFitnessApp")
                     .font(.largeTitle)
                     .padding(.bottom, 20)
-                
-                NavigationLink(destination: ExerciseEntryView(exerciseStore: exerciseStore)) {
+
+                NavigationLink(destination: ExerciseEntryView()) {
                     Text("Registrar Ejercicio")
-                        .foregroundColor(.white)
-                        .frame(width: 200, height: 50)
-                        .background(Color.blue)
-                        .cornerRadius(10)
+                        .buttonStyle(MyButtonStyle(color: .blue))
                 }
-                
+
                 NavigationLink(destination: StatisticsView()) {
                     Text("Ver Estadísticas")
-                        .foregroundColor(.white)
-                        .frame(width: 200, height: 50)
-                        .background(Color.green)
-                        .cornerRadius(10)
+                        .buttonStyle(MyButtonStyle(color: .green))
                 }
-                
+
                 NavigationLink(destination: PersonalInfoView()) {
                     Text("Ingresar Datos Personales")
-                        .foregroundColor(.white)
-                        .frame(width: 200, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
+                        .buttonStyle(MyButtonStyle(color: .orange))
                 }
             }
             .navigationBarTitle("Inicio")
         }
-        .environmentObject(exerciseStore) 
+        .environmentObject(exerciseStore)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct MyButtonStyle: ButtonStyle {
+    var color: Color
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(.white)
+            .frame(width: 200, height: 50)
+            .background(color)
+            .cornerRadius(10)
+            .padding()
     }
 }

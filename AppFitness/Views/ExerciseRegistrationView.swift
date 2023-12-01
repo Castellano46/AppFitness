@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ExerciseRegistrationView: View {
-    @Binding var exerciseList: [Exercise]
+    @ObservedObject var exerciseStore: ExerciseStore
 
     @State private var exerciseName = ""
     @State private var exerciseDuration = ""
     @State private var exerciseWeight = ""
+    
     @State private var didLoadExercises = false
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -24,21 +25,23 @@ struct ExerciseRegistrationView: View {
 
                 TextField("Duración del ejercicio (minutos)", text: $exerciseDuration)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.decimalPad)   
                     .padding()
 
                 TextField("Peso del ejercicio (kg)", text: $exerciseWeight)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.decimalPad)
                     .padding()
 
                 Button(action: {
-                    if !exerciseName.isEmpty {
-                        let newExercise = Exercise(name: exerciseName, duration: exerciseDuration, weight: exerciseWeight)
-                        exerciseList.append(newExercise)
-                        saveExercisesToUserDefaults(exerciseList)
-
+                    if !exerciseName.isEmpty, let durationFloat = Float(exerciseDuration), let weightFloat = Float(exerciseWeight) {
+                        exerciseStore.addExercise(name: exerciseName, duration: durationFloat, weight: weightFloat)
                         exerciseName = ""
                         exerciseDuration = ""
                         exerciseWeight = ""
+                    } else {
+                        // Manejar el caso en el que la conversión no sea exitosa
+                        print("Error: No se pudieron convertir duration o weight a Float")
                     }
                 }) {
                     Text("Guardar Ejercicio")
@@ -50,10 +53,9 @@ struct ExerciseRegistrationView: View {
                 .padding()
 
                 List {
-                    ForEach(exerciseList) { exercise in
-                        NavigationLink(destination: ExerciseDetailView(exercise: exercise, exerciseList: $exerciseList)) {
-                            ExerciseRowView(exercise: exercise)
-                        }
+                    ForEach($exerciseStore.exercises) { $exercise in
+                        NavigationLink(destination: ExerciseDetailView(exercise: exercise, exerciseList: $exerciseStore.exercises)) {
+                            ExerciseRowView(exercise: exercise)                        }
                     }
                     .onDelete(perform: deleteExercise)
                 }
@@ -61,42 +63,24 @@ struct ExerciseRegistrationView: View {
                 Spacer()
             }
             .navigationBarTitle("Registrar Ejercicio", displayMode: .inline)
-            .navigationBarBackButtonHidden(true)
-            .onAppear {
-                if !didLoadExercises {
-                    exerciseList = loadExercisesFromUserDefaults()
-                    didLoadExercises = true
+                        .navigationBarBackButtonHidden(true)
+                        .onAppear {
+                            if !didLoadExercises {
+                                exerciseStore.fetchExercises()
+                                didLoadExercises = true
+                            }
+                        }
+                    }
                 }
-            }
-        }
-    }
-
-    func saveExercisesToUserDefaults(_ exercises: [Exercise]) {
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(exercises) {
-            UserDefaults.standard.set(encoded, forKey: "exercises")
-        }
-    }
-
-    func loadExercisesFromUserDefaults() -> [Exercise] {
-        if let exercisesData = UserDefaults.standard.data(forKey: "exercises") {
-            let decoder = JSONDecoder()
-            if let decodedExercises = try? decoder.decode([Exercise].self, from: exercisesData) {
-                return decodedExercises
-            }
-        }
-        return []
-    }
 
     func deleteExercise(at offsets: IndexSet) {
-        exerciseList.remove(atOffsets: offsets)
-        saveExercisesToUserDefaults(exerciseList)
+        exerciseStore.deleteExercise(at: offsets)
         print("Ejercicio eliminado")
     }
 }
 
 struct ExerciseRegistrationView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseRegistrationView(exerciseList: .constant([]))
+        ExerciseRegistrationView(exerciseStore: ExerciseStore())
     }
 }

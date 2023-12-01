@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ExerciseEntryView: View {
-    @State private var exerciseName = ""
-    @ObservedObject var exerciseStore: ExerciseStore
+    @EnvironmentObject var exerciseStore: ExerciseStore
 
     var body: some View {
         NavigationView {
@@ -22,16 +21,16 @@ struct ExerciseEntryView: View {
                 }
                 .frame(alignment: .topLeading)
 
-                NavigationLink(destination: ExerciseRegistrationView(exerciseList: $exerciseStore.exercises)) {
+                NavigationLink(destination: ExerciseRegistrationView(exerciseStore: exerciseStore)) {
                     Text("Registrar Ejercicio")
                 }
 
-                List(exerciseStore.exercises) { exercise in
+                List($exerciseStore.exercises) { exerciseBinding in
                     VStack(alignment: .leading) {
-                        Text(exercise.name)
+                        Text(exerciseBinding.wrappedValue.name)
                             .font(.headline)
-                        Text("Duración: \(exercise.duration) minutos")
-                        Text("Peso: \(exercise.weight) kg")
+                        Text("Duración: \(exerciseBinding.wrappedValue.duration) minutos")
+                        Text("Peso: \(exerciseBinding.wrappedValue.weight) kg")
                     }
                 }
                 .navigationBarTitle("Ejercicios Registrados")
@@ -43,6 +42,7 @@ struct ExerciseEntryView: View {
 
 struct ExerciseEntryView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseEntryView(exerciseStore: ExerciseStore()) 
+        ExerciseEntryView()
+            .environmentObject(ExerciseStore())
     }
 }
