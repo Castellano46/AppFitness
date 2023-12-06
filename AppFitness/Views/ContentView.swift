@@ -13,47 +13,63 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Text("MyFitnessApp")
-                    .font(.largeTitle)
-                    .padding(.bottom, 20)
-
-                NavigationLink(destination: ExerciseEntryView()) {
-                    Text("Registrar Ejercicio")
-                        .buttonStyle(MyButtonStyle(color: .blue))
+            ZStack {
+                Image("Fondo2")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                
+                VStack {
+                    Text("My Fitness App")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(.white)
+                        .padding(.bottom, 100)
+                    
+                    NavigationLink(destination: ExerciseEntryView()) {
+                        Text("Registrar Ejercicio")
+                            .foregroundColor(.white)
+                            .bold()
+                            .frame(width: 200, height: 50)
+                            .background(Color.blue)
+                            .opacity(0.8)
+                            .cornerRadius(20)
+                            .padding()
+                    }
+                    
+                    NavigationLink(destination: StatisticsView()) {
+                        Text("Ver Estadísticas")
+                            .foregroundColor(.white)
+                            .bold()
+                            .frame(width: 200, height: 50)
+                            .background(Color.green)
+                            .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(20)
+                            .padding()
+                    }
+                    
+                    NavigationLink(destination: PersonalInfoView()) {
+                        Text("Datos Personales")
+                            .foregroundColor(.white)
+                            .bold()
+                            .frame(width: 200, height: 50)
+                            .background(Color.orange)
+                            .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(20)
+                            .padding()
+                    }
                 }
-
-                NavigationLink(destination: StatisticsView()) {
-                    Text("Ver Estadísticas")
-                        .buttonStyle(MyButtonStyle(color: .green))
-                }
-
-                NavigationLink(destination: PersonalInfoView()) {
-                    Text("Ingresar Datos Personales")
-                        .buttonStyle(MyButtonStyle(color: .orange))
-                }
+                .navigationBarHidden(true)
+                .environmentObject(exerciseStore)
             }
-            .navigationBarTitle("Inicio")
         }
-        .environmentObject(exerciseStore)
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
-}
 
-struct MyButtonStyle: ButtonStyle {
-    var color: Color
-
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .foregroundColor(.white)
-            .frame(width: 200, height: 50)
-            .background(color)
-            .cornerRadius(10)
-            .padding()
-    }
-}
