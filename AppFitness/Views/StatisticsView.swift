@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StatisticsView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var name = ""
     @State private var height = ""
     @State private var weight = ""
@@ -17,24 +19,58 @@ struct StatisticsView: View {
     @State private var bmiCategory = ""
 
     var body: some View {
-        VStack {
-            Text("Estadísticas")
-                .font(.largeTitle)
-                .padding(.bottom, 20)
+        ZStack {
+            Image("Fondo3")
+                .resizable()
+                .scaledToFill()
+                .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                .edgesIgnoringSafeArea(.all)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 
-            Text("Nombre: \(name)")
-            Text("Altura: \(height) cm")
-            Text("Peso: \(weight) kg")
-            Text("Sexo: \(gender)")
-            Text("Edad: \(age) años")
+            Color.black.opacity(0.6)
+                .edgesIgnoringSafeArea(.all)
 
-            // Calcular el IMC y categoría
-            Text("IMC: \(String(format: "%.1f", bmi))")
-            Text("Categoría: \(bmiCategory)")
+            VStack {
+                Text("Estadísticas")
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundColor(.white)
+                    .padding(.bottom, 50)
 
+                Text("Nombre: \(name)")
+                    .bold()
+                    .font(.title)
+                    .foregroundColor(.white)
+                Text("Altura: \(height) cm")
+                    .bold()
+                    .font(.title)
+                    .foregroundColor(.white)
+                Text("Peso: \(weight) kg")
+                    .bold()
+                    .font(.title)
+                    .foregroundColor(.white)
+                Text("Sexo: \(gender)")
+                    .bold()
+                    .font(.title)
+                    .foregroundColor(.white)
+                Text("Edad: \(age)")
+                    .bold()
+                    .font(.title)
+                    .foregroundColor(.white)
+
+                // Calcular el IMC y categoría
+                Text("IMC: \(String(format: "%.1f", bmi))")
+                    .bold()
+                    .font(.title)
+                    .foregroundColor(.white)
+                Text("Categoría: \(bmiCategory)")
+                    .bold()
+                    .font(.title)
+                    .foregroundColor(.white)
+            }
+            .foregroundColor(.white)
         }
         .onAppear {
-            // Cargar los datos desde UserDefaults
             name = UserDefaults.standard.string(forKey: "user_name") ?? ""
             height = UserDefaults.standard.string(forKey: "user_height") ?? ""
             weight = UserDefaults.standard.string(forKey: "user_weight") ?? ""
@@ -49,8 +85,18 @@ struct StatisticsView: View {
             }
         }
         .navigationBarTitle("", displayMode: .inline)
-    }
-
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarItems(leading:
+                        Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Image(systemName: "arrow.left.circle.fill")
+                                .foregroundColor(.red)
+                                .font(.title)
+                        }
+                    )
+                }
+            
     // Función para calcular la categoría del IMC
     private func calculateBMICategory(_ bmi: Double) -> String {
         if bmi < 18.5 {
