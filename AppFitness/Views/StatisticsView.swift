@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StatisticsView: View {
     @Environment(\.presentationMode) var presentationMode
-    
+
     @State private var name = ""
     @State private var height = ""
     @State private var weight = ""
@@ -23,7 +23,7 @@ struct StatisticsView: View {
             Image("Fondo3")
                 .resizable()
                 .scaledToFill()
-                .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                .opacity(0.8)
                 .edgesIgnoringSafeArea(.all)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 
@@ -63,10 +63,16 @@ struct StatisticsView: View {
                     .bold()
                     .font(.title)
                     .foregroundColor(.white)
-                Text("Categoría: \(bmiCategory)")
+
+                Text("Categoría: ")
                     .bold()
                     .font(.title)
                     .foregroundColor(.white)
+                +
+                Text(bmiCategory)
+                    .bold()
+                    .font(.title)
+                    .foregroundColor(categoryColor(for: bmiCategory))
             }
             .foregroundColor(.white)
         }
@@ -85,18 +91,18 @@ struct StatisticsView: View {
             }
         }
         .navigationBarTitle("", displayMode: .inline)
-                    .navigationBarBackButtonHidden(true)
-                    .navigationBarItems(leading:
-                        Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                        }) {
-                            Image(systemName: "arrow.left.circle.fill")
-                                .foregroundColor(.red)
-                                .font(.title)
-                        }
-                    )
-                }
-            
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "arrow.left.circle.fill")
+                    .foregroundColor(.red)
+                    .font(.title)
+            }
+        )
+    }
+
     // Función para calcular la categoría del IMC
     private func calculateBMICategory(_ bmi: Double) -> String {
         if bmi < 18.5 {
@@ -111,6 +117,20 @@ struct StatisticsView: View {
             return "Obesidad (Grado II)"
         } else {
             return "Obesidad (Grado III o Mórbida)"
+        }
+    }
+
+    // Función para obtener el color según la categoría
+    private func categoryColor(for category: String) -> Color {
+        switch category {
+        case "Bajo peso", "Obesidad (Grado I)", "Obesidad (Grado II)", "Obesidad (Grado III o Mórbida)":
+            return .red
+        case "Sobrepeso":
+            return .yellow
+        case "Peso normal":
+            return .green
+        default:
+            return .white
         }
     }
 }

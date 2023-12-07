@@ -21,7 +21,7 @@ struct SplashView: View {
                 Image("Logo")
                     .resizable()
                     .scaledToFit()
-                    .padding(.top, -380)
+                    .padding(.bottom, 100)
                     
                 ProgressView(NSLocalizedString("Cargando músculos", comment: ""))
                     .progressViewStyle(CircularProgressViewStyle(tint: .red))
