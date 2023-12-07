@@ -31,7 +31,6 @@ struct PersonalInfoView: View {
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                //.opacity(0.8)
                 
                 VStack {
                     VStack {
@@ -112,10 +111,9 @@ struct PersonalInfoView: View {
     }
 }
     
-    
-    struct PersonalInfoView_Previews: PreviewProvider {
-        static var previews: some View {
-            PersonalInfoView()
-        }
+struct PersonalInfoView_Previews: PreviewProvider {
+    static var previews: some View {
+        PersonalInfoView()
     }
+}
 

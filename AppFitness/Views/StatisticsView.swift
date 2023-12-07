@@ -57,8 +57,7 @@ struct StatisticsView: View {
                     .bold()
                     .font(.title)
                     .foregroundColor(.white)
-
-                // Calcular el IMC y categoría
+                
                 Text("IMC: \(String(format: "%.1f", bmi))")
                     .bold()
                     .font(.title)
@@ -83,7 +82,6 @@ struct StatisticsView: View {
             gender = UserDefaults.standard.string(forKey: "user_gender") ?? ""
             age = UserDefaults.standard.string(forKey: "user_age") ?? ""
 
-            // Calcular el IMC
             if let heightDouble = Double(height), let weightDouble = Double(weight) {
                 let heightInMeters = heightDouble / 100.0
                 bmi = weightDouble / (heightInMeters * heightInMeters)
