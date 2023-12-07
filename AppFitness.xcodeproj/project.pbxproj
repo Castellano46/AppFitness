@@ -22,6 +22,7 @@
 		EB986F332B19D5F10061B2BC /* FitnessAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB986F312B19D5F10061B2BC /* FitnessAppModel.xcdatamodeld */; };
 		EB986F352B19D8A00061B2BC /* ExerciseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB986F342B19D8A00061B2BC /* ExerciseStore.swift */; };
 		EB986F372B19DC1C0061B2BC /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB986F362B19DC1C0061B2BC /* PersistenceController.swift */; };
+		EBD9C2F42B2096AD004E606F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD9C2F32B2096AD004E606F /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		EB986F322B19D5F10061B2BC /* FitnessAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FitnessAppModel.xcdatamodel; sourceTree = "<group>"; };
 		EB986F342B19D8A00061B2BC /* ExerciseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStore.swift; sourceTree = "<group>"; };
 		EB986F362B19DC1C0061B2BC /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		EBD9C2F32B2096AD004E606F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				EB7448672AD4998E00F9804A /* ExerciseRowView.swift */,
 				EB7448692AD499AD00F9804A /* ExerciseDetailView.swift */,
 				EB986F342B19D8A00061B2BC /* ExerciseStore.swift */,
+				EBD9C2F32B2096AD004E606F /* SplashView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				EB986F372B19DC1C0061B2BC /* PersistenceController.swift in Sources */,
 				EB7448602AD4547100F9804A /* ExerciseRegistrationView.swift in Sources */,
 				EB986F352B19D8A00061B2BC /* ExerciseStore.swift in Sources */,
+				EBD9C2F42B2096AD004E606F /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

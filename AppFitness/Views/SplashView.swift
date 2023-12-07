@@ -8,11 +8,45 @@
 import SwiftUI
 
 struct SplashView: View {
+    @State private var isActive: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Image("Fondo1")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+
+            VStack {
+                Image("Logo")
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.top, -380)
+                    
+                ProgressView(NSLocalizedString("Cargando músculos", comment: ""))
+                    .progressViewStyle(CircularProgressViewStyle(tint: .red))
+                    .foregroundColor(Color.red)
+                    .font(.system(size: 15, weight: .bold))
+                    .scaleEffect(2.0)
+                    .padding(.bottom, -50)
+                    .id(0)
+            }
+            .padding([.leading, .trailing], 20)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    isActive = true
+                }
+            }
+            .fullScreenCover(isPresented: $isActive, content: {
+                ContentView()
+            })
+        }
+        .ignoresSafeArea()
     }
 }
 
-#Preview {
-    SplashView()
+struct SplashView_Previews: PreviewProvider {
+    static var previews: some View {
+        SplashView()
+    }
 }
