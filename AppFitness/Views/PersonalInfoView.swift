@@ -89,31 +89,20 @@ struct PersonalInfoView: View {
                         }
                         .background(
                             NavigationLink("", destination: ContentView(), isActive: $navigateToHome)
-                                .opacity(0)
+                                .hidden()
                         )
                         Spacer()
                     }
                 }
                 .navigationBarTitle("", displayMode: .inline)
-                .navigationBarBackButtonHidden(true)
-                .navigationBarItems(
-                    leading: Button(action: {
-                        // Acción al retroceder
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Image(systemName: "arrow.left.circle.fill")
-                            .font(.title)
-                            .foregroundColor(.red)
-                    }
-                )
+                .navigationBarHidden(true)
             }
         }
     }
 }
-    
+
 struct PersonalInfoView_Previews: PreviewProvider {
     static var previews: some View {
         PersonalInfoView()
     }
 }
-

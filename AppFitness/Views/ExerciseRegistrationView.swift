@@ -15,6 +15,7 @@ struct ExerciseRegistrationView: View {
     @State private var exerciseWeight = ""
     
     @State private var didLoadExercises = false
+    @State private var navigateToDetailView = false
     
     var body: some View {
         NavigationView {
@@ -25,7 +26,7 @@ struct ExerciseRegistrationView: View {
 
                 TextField("Duración del ejercicio (minutos)", text: $exerciseDuration)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.decimalPad)   
+                    .keyboardType(.decimalPad)
                     .padding()
 
                 TextField("Peso del ejercicio (kg)", text: $exerciseWeight)
@@ -39,8 +40,8 @@ struct ExerciseRegistrationView: View {
                         exerciseName = ""
                         exerciseDuration = ""
                         exerciseWeight = ""
+                        navigateToDetailView = true
                     } else {
-                        // Manejar el caso en el que la conversión no sea exitosa
                         print("Error: No se pudieron convertir duration o weight a Float")
                     }
                 }) {
@@ -55,23 +56,27 @@ struct ExerciseRegistrationView: View {
                 List {
                     ForEach($exerciseStore.exercises) { $exercise in
                         NavigationLink(destination: ExerciseDetailView(exercise: exercise, exerciseList: $exerciseStore.exercises)) {
-                            ExerciseRowView(exercise: exercise)                        }
+                            ExerciseRowView(exercise: exercise)
+                        }
                     }
                     .onDelete(perform: deleteExercise)
                 }
-
+                .background(
+                    NavigationLink("", destination: ExerciseDetailView(exercise: exerciseStore.exercises.last ?? Exercise(), exerciseList: $exerciseStore.exercises), isActive: $navigateToDetailView)
+                        .hidden()
+                )
                 Spacer()
             }
             .navigationBarTitle("Registrar Ejercicio", displayMode: .inline)
-                        .navigationBarBackButtonHidden(true)
-                        .onAppear {
-                            if !didLoadExercises {
-                                exerciseStore.fetchExercises()
-                                didLoadExercises = true
-                            }
-                        }
-                    }
+            .navigationBarBackButtonHidden(true)
+            .onAppear {
+                if !didLoadExercises {
+                    exerciseStore.fetchExercises()
+                    didLoadExercises = true
                 }
+            }
+        }
+    }
 
     func deleteExercise(at offsets: IndexSet) {
         exerciseStore.deleteExercise(at: offsets)

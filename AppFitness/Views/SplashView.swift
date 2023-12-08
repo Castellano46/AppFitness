@@ -40,6 +40,7 @@ struct SplashView: View {
             .fullScreenCover(isPresented: $isActive, content: {
                 ContentView()
             })
+            .navigationBarHidden(true) 
         }
         .ignoresSafeArea()
     }
