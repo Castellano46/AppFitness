@@ -60,6 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				EB986F312B19D5F10061B2BC /* FitnessAppModel.xcdatamodeld */,
+				EB7448482AD4436900F9804A /* AppFitnessApp.swift */,
+				EB986F362B19DC1C0061B2BC /* PersistenceController.swift */,
+				EB74484C2AD4436A00F9804A /* Assets.xcassets */,
 				EB7448472AD4436900F9804A /* AppFitness */,
 				EB7448462AD4436900F9804A /* Products */,
 			);
@@ -76,11 +79,9 @@
 		EB7448472AD4436900F9804A /* AppFitness */ = {
 			isa = PBXGroup;
 			children = (
+				EB8980242B23186300608174 /* Models */,
 				EB7448562AD4443700F9804A /* Views */,
-				EB7448482AD4436900F9804A /* AppFitnessApp.swift */,
-				EB74484C2AD4436A00F9804A /* Assets.xcassets */,
 				EB74484E2AD4436A00F9804A /* Preview Content */,
-				EB986F362B19DC1C0061B2BC /* PersistenceController.swift */,
 			);
 			path = AppFitness;
 			sourceTree = "<group>";
@@ -96,19 +97,66 @@
 		EB7448562AD4443700F9804A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EB74484A2AD4436900F9804A /* ContentView.swift */,
-				EB7448572AD4446000F9804A /* ExerciseEntryView.swift */,
-				EB7448592AD4456100F9804A /* StatisticsView.swift */,
-				EB74485B2AD4467E00F9804A /* PersonalInfoView.swift */,
-				EB74485D2AD44A0300F9804A /* ConfirmationView.swift */,
-				EB74485F2AD4547100F9804A /* ExerciseRegistrationView.swift */,
-				EB7448612AD461CA00F9804A /* Exercise.swift */,
-				EB7448672AD4998E00F9804A /* ExerciseRowView.swift */,
-				EB7448692AD499AD00F9804A /* ExerciseDetailView.swift */,
-				EB986F342B19D8A00061B2BC /* ExerciseStore.swift */,
-				EBD9C2F32B2096AD004E606F /* SplashView.swift */,
+				EB8980252B231AFF00608174 /* Tools */,
+				EB8980262B231B2D00608174 /* Home */,
+				EB8980272B231B3B00608174 /* Exercise */,
+				EB8980282B231B5600608174 /* Statistics */,
+				EB8980292B231B6400608174 /* PersonalInfo */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EB8980242B23186300608174 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB7448612AD461CA00F9804A /* Exercise.swift */,
+				EB986F342B19D8A00061B2BC /* ExerciseStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EB8980252B231AFF00608174 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				EBD9C2F32B2096AD004E606F /* SplashView.swift */,
+				EB74485D2AD44A0300F9804A /* ConfirmationView.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		EB8980262B231B2D00608174 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EB74484A2AD4436900F9804A /* ContentView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EB8980272B231B3B00608174 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				EB7448572AD4446000F9804A /* ExerciseEntryView.swift */,
+				EB74485F2AD4547100F9804A /* ExerciseRegistrationView.swift */,
+				EB7448672AD4998E00F9804A /* ExerciseRowView.swift */,
+				EB7448692AD499AD00F9804A /* ExerciseDetailView.swift */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		EB8980282B231B5600608174 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				EB7448592AD4456100F9804A /* StatisticsView.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		EB8980292B231B6400608174 /* PersonalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				EB74485B2AD4467E00F9804A /* PersonalInfoView.swift */,
+			);
+			path = PersonalInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

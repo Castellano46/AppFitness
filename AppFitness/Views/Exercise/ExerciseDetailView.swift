@@ -35,3 +35,12 @@ struct ExerciseDetailView: View {
         .navigationBarTitle("Detalle del Ejercicio", displayMode: .inline)
     }
 }
+
+struct ExerciseDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        let exercise = Exercise() // Supongamos que Exercise tiene un inicializador sin argumentos
+        let exerciseList: [Exercise] = [exercise]
+
+        return ExerciseDetailView(exercise: exercise, exerciseList: .constant(exerciseList))
+    }
+}
