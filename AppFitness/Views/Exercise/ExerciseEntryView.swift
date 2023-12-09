@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ExerciseEntryView: View {
-    @EnvironmentObject var exerciseStore: ExerciseStore
-
+    //@EnvironmentObject var exerciseStore: ExerciseStore
+    @StateObject private var exerciseStore = ExerciseStore()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -37,6 +38,7 @@ struct ExerciseEntryView: View {
             }
             .navigationBarHidden(true)
         }
+        .environmentObject(exerciseStore) 
     }
 }
 

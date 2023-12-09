@@ -13,10 +13,7 @@ struct ExerciseRegistrationView: View {
     @State private var exerciseName = ""
     @State private var exerciseDuration = ""
     @State private var exerciseWeight = ""
-    
-    @State private var didLoadExercises = false
-    @State private var navigateToDetailView = false
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -40,7 +37,6 @@ struct ExerciseRegistrationView: View {
                         exerciseName = ""
                         exerciseDuration = ""
                         exerciseWeight = ""
-                        navigateToDetailView = true
                     } else {
                         print("Error: No se pudieron convertir duration o weight a Float")
                     }
@@ -61,20 +57,10 @@ struct ExerciseRegistrationView: View {
                     }
                     .onDelete(perform: deleteExercise)
                 }
-                .background(
-                    NavigationLink("", destination: ExerciseDetailView(exercise: exerciseStore.exercises.last ?? Exercise(), exerciseList: $exerciseStore.exercises), isActive: $navigateToDetailView)
-                        .hidden()
-                )
                 Spacer()
             }
             .navigationBarTitle("Registrar Ejercicio", displayMode: .inline)
             .navigationBarBackButtonHidden(true)
-            .onAppear {
-                if !didLoadExercises {
-                    exerciseStore.fetchExercises()
-                    didLoadExercises = true
-                }
-            }
         }
     }
 
