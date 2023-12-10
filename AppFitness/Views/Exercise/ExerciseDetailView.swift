@@ -38,9 +38,8 @@ struct ExerciseDetailView: View {
 
 struct ExerciseDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let exercise = Exercise() // Supongamos que Exercise tiene un inicializador sin argumentos
+        let exercise = Exercise()
         let exerciseList: [Exercise] = [exercise]
-
         return ExerciseDetailView(exercise: exercise, exerciseList: .constant(exerciseList))
     }
 }
