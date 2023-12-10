@@ -9,16 +9,16 @@ Con esta App estoy adquiriendo y poniendo en práctica nuevos conocimientos, ade
 
 <table>
   <tr>
-    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/1.png" width="300" /></td>
-    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/2.png" width="300" /></td>
-    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/3.png" width="300" /></td>
+    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V2.0/1.png" width="300" /></td>
+    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V2.0/2.png" width="300" /></td>
+    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V2.0/4.png" width="300" /></td>
   </tr>
 </table>
 <table>
   <tr>
-    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/4.png" width="300" /></td>
+    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V2.0/5.png" width="300" /></td>
+    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V2.0/6.png" width="300" /></td>
     <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/5.png" width="300" /></td>
-    <td><img src="https://github.com/Castellano46/AppFitness/blob/main/Imagenes%20V1.0/6.png" width="300" /></td>
   </tr>
 </table>
 
