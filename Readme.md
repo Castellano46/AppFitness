@@ -38,7 +38,6 @@ La instalación de esta App es muy sencilla puesto que se trata de un repositori
 Para su instalación solo deberemos descargar el repositorio en nuestro MAC para proceder a su ejecución con XCode.
 Una vez en XCode veremos todos los archivos .swift que lo componen (podremos modificar alguno si así lo deseamos)
 Para ver su contenido en el simulador únicamente tendremos que pulsar **PLAY** y ya podremos utilizar la App como si en terminal iPhone la tuviésemos. 
-Paso a paso de cómo instalar la herramienta digital. En esta sección es recomendable explicar la arquitectura de carpetas y módulos que componen el sistema.
 
 ## Guía de usuario
 ---
