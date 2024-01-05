@@ -37,7 +37,7 @@ Con esta App estoy adquiriendo y poniendo en práctica nuevos conocimientos, ade
 La instalación de esta App es muy sencilla puesto que se trata de un repositorio aún en construcción. 
 Para su instalación solo deberemos descargar el repositorio en nuestro MAC para proceder a su ejecución con XCode.
 Una vez en XCode veremos todos los archivos .swift que lo componen (podremos modificar alguno si así lo deseamos)
-Para ver su contenido en el simulador únicamente tendremos que pulsar **PLAY** y ya podremos utilizar la App como si en terminal iPhone la tuviésemos. 
+Para ver su contenido en el simulador únicamente tendremos que pulsar **PLAY** ▶️  y ya podremos utilizar la App como si en un terminal iPhone la tuviésemos. 
 
 ## Guía de usuario
 ---
